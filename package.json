@@ -1,0 +1,58 @@
+{
+  "name": "minelev-temporary-frontpage",
+  "description": "Temporary frontpage for MinElev",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Geir Gåsodden",
+    "email": "geir.gasodden@pythonia.no",
+    "url": "https://github.com/zrrrzzt"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=10.5.0"
+  },
+  "scripts": {
+    "test": "standard && npm audit",
+    "test-offline": "standard",
+    "standard-fix": "standard --fix",
+    "start": "NODE_ENV=production serve public -p 8000",
+    "deploy": "npm run cleanup && now public --static && --name minelev-temporary-frontpage && now alias",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm install",
+    "cleanup": "rm -rf node_modules && rm package-lock.json"
+  },
+  "keywords": [
+    "MinElev",
+    "Louie",
+    "Telemark fylkeskommune"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/telemark/tmp.tilskudd.t-fk.no.git"
+  },
+  "bugs": {
+    "url": "https://github.com/telemark/tmp.tilskudd.t-fk.no/issues"
+  },
+  "homepage": "https://github.com/telemark/tmp.tilskudd.t-fk.no#readme",
+  "now": {
+    "name": "minelev-temporary-frontpage",
+    "alias": [
+      "www.minelev.no"
+    ],
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "type": "static"
+  },
+  "standard": {
+    "ignore": [
+      "public"
+    ]
+  },
+  "devDependencies": {
+    "standard": "11.0.1"
+  },
+  "dependencies": {
+    "serve": "9.1.0"
+  }
+}
