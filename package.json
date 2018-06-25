@@ -17,7 +17,7 @@
     "test-offline": "standard",
     "standard-fix": "standard --fix",
     "start": "NODE_ENV=production serve public -p 8000",
-    "deploy": "npm run cleanup && now public --static && --name minelev-temporary-frontpage && now alias",
+    "deploy": "now public --static --name minelev-temporary-frontpage && now alias",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install",
     "cleanup": "rm -rf node_modules && rm package-lock.json"
   },
